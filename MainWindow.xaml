@@ -1,0 +1,245 @@
+﻿<Window x:Class="WPF_HelloWorld.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_HelloWorld" xmlns:svgc1="http://sharpvectors.codeplex.com/svgc/"
+        mc:Ignorable="d"
+        Title="" 
+        SizeToContent="Manual" 
+        Width="1920" 
+        Height="1080"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        WindowState="Maximized"
+        Background="#7CC45B"
+        TextInput="Window_KeyDown"
+        KeyDown="Enter_KeyDown"
+        Icon="C:\Users\Usario\source\repos\WPF_HelloWorld\Images\app_con.ico">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <StackPanel
+            Grid.Row="0"
+            VerticalAlignment="Center">
+
+            <TextBlock
+                x:Name="logoPlaceholderText"
+                Text="SUPERCALIFRAGILÍSTICOESPIALIDOSO"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                FontSize="85"
+                FontWeight="Bold"
+                FontFamily="./#Public Sans"
+                Foreground="#FFFFFF"
+                Margin="0, 0, 0, 50"
+                TextWrapping="Wrap">
+
+                <TextBlock.Effect>
+                    <DropShadowEffect ShadowDepth="4"
+                                      Direction="330"
+                                      Color="Black"
+                                      Opacity="0.5"
+                                      BlurRadius="4"/>
+                </TextBlock.Effect>
+            </TextBlock>
+
+            <TextBlock
+                x:Name="welcomeText"
+                Text="¡BIENVENIDO!"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                FontSize="58"
+                FontWeight="Medium"
+                FontFamily="./#Public Sans"
+                Foreground="#FFFFFF"
+                Margin="0, 0, 0, 50"
+                TextWrapping="Wrap">
+
+                <TextBlock.Effect>
+                    <DropShadowEffect ShadowDepth="4"
+                                      Direction="330"
+                                      Color="Black"
+                                      Opacity="0.5"
+                                      BlurRadius="4"/>
+                </TextBlock.Effect>
+            </TextBlock>
+
+            <TextBlock
+                x:Name="checkPriceText"
+                Text="CONSULTE SU PRECIO AQUÍ"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                FontSize="58"
+                FontWeight="Medium"
+                FontFamily="./#Public Sans"
+                Foreground="#FFFFFF"
+                Margin="0, 0, 0, 50">
+
+                <TextBlock.Effect>
+                    <DropShadowEffect ShadowDepth="4"
+                                      Direction="330"
+                                      Color="Black"
+                                      Opacity="0.5"
+                                      BlurRadius="4"/>
+                </TextBlock.Effect>
+            </TextBlock>
+        </StackPanel>
+
+        <StackPanel
+            x:Name="codeBarStack"
+            Grid.Row="1"
+            HorizontalAlignment="Center"
+            Visibility="Visible">
+
+            <StackPanel>
+
+                <UserControl xmlns:svgc="http://sharpvectors.codeplex.com/svgc"
+                         x:Name="barcodeLaser"
+                         Width="384"
+                         Height="200"
+                             Margin="0, 0, 0, -125">
+                    <svgc1:SvgViewbox Source="C:\Users\Usario\source\repos\WPF_HelloWorld\Images\scanner.svg"/>
+                </UserControl>
+
+                <UserControl xmlns:svgc="http://sharpvectors.codeplex.com/svgc"
+                         x:Name="barcodeImage"
+                         Width="376"
+                         Height="200">
+                    <svgc1:SvgViewbox Source="C:\Users\Usario\source\repos\WPF_HelloWorld\Images\barcode-png.svg"/>
+                </UserControl>
+
+                <Image 
+                    x:Name="adImage"
+                    Width="376"
+                    Height="200"
+                    Visibility="Collapsed"/>
+                
+                <UserControl xmlns:svgc="http://sharpvectors.codeplex.com/svgc"
+                         x:Name="barcodeNumber"
+                         Width="376"
+                         Height="200"
+                             Margin="0, -100, 0, 0">
+                    <svgc1:SvgViewbox Source="C:\Users\Usario\source\repos\WPF_HelloWorld\Images\barcode_number.svg"/>
+                </UserControl>
+
+                <Grid>
+                    <UserControl xmlns:svgc="http://sharpvectors.codeplex.com/svgc"
+                                 x:Name="greenWave"
+                                 Margin="0, -300, 0, 0">
+                        <svgc1:SvgViewbox Source="C:\Users\Usario\source\repos\WPF_HelloWorld\Images\Wave.svg" IsEnabled="False"/>
+                    </UserControl>
+
+                    <TextBlock
+                        x:Name="dateTimeClock"
+                        Text="DD/MM/AAAA"
+                        FontSize="35"
+                        FontWeight="Medium"
+                        FontFamily="./#Public Sans"
+                        Foreground="#FFFFFF"
+                        VerticalAlignment="Bottom"
+                        HorizontalAlignment="Right"
+                        Margin="0, 0, 75, 0">
+
+                        <TextBlock.Effect>
+                            <DropShadowEffect ShadowDepth="4"
+                                      Direction="330"
+                                      Color="Black"
+                                      Opacity="0.5"
+                                      BlurRadius="4"/>
+                        </TextBlock.Effect>
+                    </TextBlock>
+
+                </Grid>
+            </StackPanel>
+
+        </StackPanel>
+
+        <StackPanel
+            x:Name="productInfoStack"
+            Grid.Row="1"
+            Orientation="Horizontal"
+            Visibility="Collapsed">
+
+            <Image
+                x:Name="productImage"
+                   Width="500"
+                   Height="500"
+                   Margin="35">
+            </Image>
+
+            <StackPanel
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                >
+                
+                <TextBlock 
+                     x:Name="productName"
+                Text="PRODUCTO: MANZANA"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                FontSize="58"
+                FontWeight="Medium"
+                FontFamily="./#Public Sans"
+                Foreground="#FFFFFF"
+                Margin="0, 0, 0, 10"
+                TextWrapping="Wrap">
+
+                    <TextBlock.Effect>
+                        <DropShadowEffect ShadowDepth="4"
+                                      Direction="330"
+                                      Color="Black"
+                                      Opacity="0.5"
+                                      BlurRadius="4"/>
+                    </TextBlock.Effect>
+                </TextBlock>
+
+                <TextBlock 
+                     x:Name="productPrice"
+                Text="PRECIO: $53.00 "
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                FontSize="58"
+                FontWeight="Medium"
+                FontFamily="./#Public Sans"
+                Foreground="#FFFFFF"
+                Margin="0, 0, 0, 10"
+                TextWrapping="Wrap">
+
+                    <TextBlock.Effect>
+                        <DropShadowEffect ShadowDepth="4"
+                                      Direction="330"
+                                      Color="Black"
+                                      Opacity="0.5"
+                                      BlurRadius="4"/>
+                    </TextBlock.Effect>
+                </TextBlock>
+                <TextBlock 
+                     x:Name="productStock"
+                Text="EXISTENCIA: 45 unidades"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                FontSize="58"
+                FontWeight="Medium"
+                FontFamily="./#Public Sans"
+                Foreground="#FFFFFF"
+                Margin="0, 0, 0, 10"
+                TextWrapping="Wrap">
+
+                    <TextBlock.Effect>
+                        <DropShadowEffect ShadowDepth="4"
+                                      Direction="330"
+                                      Color="Black"
+                                      Opacity="0.5"
+                                      BlurRadius="4"/>
+                    </TextBlock.Effect>
+                </TextBlock>
+            </StackPanel>
+        </StackPanel>
+        </Grid>
+</Window>
